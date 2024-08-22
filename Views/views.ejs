@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Registration Data</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="view-body">
+    <div class="table-container ">
+        <div class="add">
+            <div class="add-heading">
+                <h2 class="heading">Registered Volunteers</h2>
+            </div>
+            <div class="add-btn">
+                <a href="/" role="button" class="btn1">Add Volunteer</a>
+            </div>
+            
+        </div>
+        <table>
+            <thead>
+               <th>id</th>
+               <th>full Name</th>
+               <th>Email</th>
+               <th>Phone Number</th>
+               <th>Skills</th>
+               <th>Actions</th>
+            </thead>
+            <tbody>
+                <!-- Sample Data Rows -->
+                <%reg.forEach((data)=>{%>
+                    <tr>
+                        <td><%= data.id %></td>
+                        <td><%= data.name %></td>
+                        <td><%= data.email %></td>
+                        <td><%= data.phone %></td>
+                        <td><%= data.Skills %></td>
+                        <td class="btn-box">
+                            <a href="/edit/<%=data.id%>" role="button" class="btn2">Edit</a>
+                           <a href="/delete/<%=data.id%>" role="button" class="btn2 bg-danger">Delete</a>
+                        </td>
+                    </tr>
+                <%}) %>   
+                <!-- More rows can be added here -->
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
